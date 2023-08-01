@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/ngx-loading",
       "sourceRoot": "projects/ngx-loading/src",
-      "prefix": "ngx",
+      "prefix": "lac",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

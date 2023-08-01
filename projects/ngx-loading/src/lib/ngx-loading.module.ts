@@ -1,19 +1,19 @@
 import { CommonModule } from '@angular/common';
 import type { ModuleWithProviders } from '@angular/core';
 import { NgModule } from '@angular/core';
-import type { INgxLoadingConfig } from './ngx-loading-config';
-import { NgxLoadingComponent } from './ngx-loading.component';
+import type { ILacLoadingConfig } from './ngx-loading-config';
+import { LacLoadingComponent } from './ngx-loading.component';
 @NgModule({
-  declarations: [NgxLoadingComponent],
+  declarations: [LacLoadingComponent],
   imports: [CommonModule],
-  exports: [NgxLoadingComponent],
+  exports: [LacLoadingComponent],
 })
-export class NgxLoadingModule {
+export class LacLoadingModule {
   static forRoot(
-    loadingConfig: INgxLoadingConfig
-  ): ModuleWithProviders<NgxLoadingModule> {
+    loadingConfig: ILacLoadingConfig
+  ): ModuleWithProviders<LacLoadingModule> {
     return {
-      ngModule: NgxLoadingModule,
+      ngModule: LacLoadingModule,
       providers: [{ provide: 'loadingConfig', useValue: loadingConfig }],
     };
   }

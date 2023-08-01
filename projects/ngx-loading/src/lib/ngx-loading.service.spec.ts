@@ -1,16 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 import {
-  ngxLoadingAnimationTypes,
-  NgxLoadingConfig,
+  lacLoadingAnimationTypes,
+  LacLoadingConfig,
 } from './ngx-loading-config';
-import { NgxLoadingService } from './ngx-loading.service';
+import { LacLoadingService } from './ngx-loading.service';
 
 describe('NgxLoadingService', () => {
-  let service: NgxLoadingService;
+  let service: LacLoadingService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NgxLoadingService);
+    service = TestBed.inject(LacLoadingService);
   });
 
   it('should be created', () => {
@@ -18,20 +18,20 @@ describe('NgxLoadingService', () => {
   });
 
   it('should use a default NgxLoadingConfig', () => {
-    const ngxLoadingConfig = new NgxLoadingConfig();
+    const ngxLoadingConfig = new LacLoadingConfig();
     expect(service.loadingConfig).toEqual(ngxLoadingConfig);
   });
 
   it('should use a custom NgxLoadingConfig when initialised with one', () => {
-    const ngxLoadingConfig = new NgxLoadingConfig();
-    ngxLoadingConfig.animationType = ngxLoadingAnimationTypes.cubeGrid;
+    const ngxLoadingConfig = new LacLoadingConfig();
+    ngxLoadingConfig.animationType = lacLoadingAnimationTypes.cubeGrid;
     ngxLoadingConfig.backdropBackgroundColour = '#ffffff';
     ngxLoadingConfig.backdropBorderRadius = '1px';
     ngxLoadingConfig.fullScreenBackdrop = true;
     ngxLoadingConfig.primaryColour = '#00ffff';
     ngxLoadingConfig.secondaryColour = '#ff00ff';
     ngxLoadingConfig.tertiaryColour = '#ffff00';
-    service = new NgxLoadingService(ngxLoadingConfig);
+    service = new LacLoadingService(ngxLoadingConfig);
     expect(service.loadingConfig).toEqual(ngxLoadingConfig);
   });
 });
