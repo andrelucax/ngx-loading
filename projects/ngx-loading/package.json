@@ -1,6 +1,6 @@
 {
   "name": "lac-loading",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.5",
   "description": "A customisable loading spinner for Angular applications.",
   "repository": "LacunaSoftware/lac-loading",
   "keywords": [
