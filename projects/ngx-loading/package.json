@@ -1,6 +1,6 @@
 {
   "name": "lac-loading",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "A customisable loading spinner for Angular applications.",
   "repository": "LacunaSoftware/lac-loading",
   "keywords": [
@@ -38,10 +38,10 @@
   "author": "André Pinto",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^16.0.0",
-    "@angular/core": "^16.0.0"
+    "@angular/common": "^17.1.1",
+    "@angular/core": "^17.1.1"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.6.2"
   }
 }
