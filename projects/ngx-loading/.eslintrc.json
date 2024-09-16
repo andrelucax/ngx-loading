@@ -1,9 +1,13 @@
 {
   "extends": "../../.eslintrc.json",
-  "ignorePatterns": ["!**/*"],
+  "ignorePatterns": [
+    "!**/*"
+  ],
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": [
+        "*.ts"
+      ],
       "parserOptions": {
         "project": [
           "projects/ngx-loading/tsconfig.lib.json",
@@ -16,7 +20,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngx",
+            "prefix": "lac",
             "style": "camelCase"
           }
         ],
@@ -24,14 +28,16 @@
           "error",
           {
             "type": "element",
-            "prefix": "ngx",
+            "prefix": "lac",
             "style": "kebab-case"
           }
         ]
       }
     },
     {
-      "files": ["*.html"],
+      "files": [
+        "*.html"
+      ],
       "rules": {}
     }
   ]

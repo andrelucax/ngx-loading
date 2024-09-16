@@ -3,34 +3,34 @@ import type { ComponentFixture } from '@angular/core/testing';
 import { TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import {
-  ngxLoadingAnimationTypes,
-  NgxLoadingConfig,
+  lacLoadingAnimationTypes,
+  LacLoadingConfig,
 } from './ngx-loading-config';
-import { NgxLoadingComponent } from './ngx-loading.component';
-import { NgxLoadingService } from './ngx-loading.service';
+import { LacLoadingComponent } from './ngx-loading.component';
+import { LacLoadingService } from './ngx-loading.service';
 
-let ngxLoadingServiceStub: Partial<NgxLoadingService>;
+let ngxLoadingServiceStub: Partial<LacLoadingService>;
 
 describe('NgxLoadingComponent', () => {
-  let component: NgxLoadingComponent;
-  let fixture: ComponentFixture<NgxLoadingComponent>;
+  let component: LacLoadingComponent;
+  let fixture: ComponentFixture<LacLoadingComponent>;
 
   beforeEach(async () => {
     // stub NgxLoadingService for test purposes
     ngxLoadingServiceStub = {
-      loadingConfig: new NgxLoadingConfig(),
+      loadingConfig: new LacLoadingConfig(),
     };
 
     await TestBed.configureTestingModule({
-      declarations: [NgxLoadingComponent],
+      declarations: [LacLoadingComponent],
       providers: [
-        { provide: NgxLoadingService, useValue: ngxLoadingServiceStub },
+        { provide: LacLoadingService, useValue: ngxLoadingServiceStub },
       ],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxLoadingComponent);
+    fixture = TestBed.createComponent(LacLoadingComponent);
     component = fixture.componentInstance;
     component.ngOnInit();
     fixture.detectChanges();
@@ -65,51 +65,51 @@ describe('NgxLoadingComponent', () => {
   it('should show the correct animation when set once show set to true', () => {
     [
       {
-        animation: ngxLoadingAnimationTypes.threeBounce,
+        animation: lacLoadingAnimationTypes.threeBounce,
         expectedClass: '.spinner-three-bounce',
       },
       {
-        animation: ngxLoadingAnimationTypes.chasingDots,
+        animation: lacLoadingAnimationTypes.chasingDots,
         expectedClass: '.spinner-chasing-dots',
       },
       {
-        animation: ngxLoadingAnimationTypes.circle,
+        animation: lacLoadingAnimationTypes.circle,
         expectedClass: '.spinner-circle',
       },
       {
-        animation: ngxLoadingAnimationTypes.circleSwish,
+        animation: lacLoadingAnimationTypes.circleSwish,
         expectedClass: '.spinner-circle-swish',
       },
       {
-        animation: ngxLoadingAnimationTypes.cubeGrid,
+        animation: lacLoadingAnimationTypes.cubeGrid,
         expectedClass: '.sk-cube-grid',
       },
       {
-        animation: ngxLoadingAnimationTypes.doubleBounce,
+        animation: lacLoadingAnimationTypes.doubleBounce,
         expectedClass: '.spinner-double-bounce',
       },
       {
-        animation: ngxLoadingAnimationTypes.none,
+        animation: lacLoadingAnimationTypes.none,
         expectedClass: '.backdrop',
       },
       {
-        animation: ngxLoadingAnimationTypes.pulse,
+        animation: lacLoadingAnimationTypes.pulse,
         expectedClass: '.spinner-pulse',
       },
       {
-        animation: ngxLoadingAnimationTypes.rectangleBounce,
+        animation: lacLoadingAnimationTypes.rectangleBounce,
         expectedClass: '.spinner-rectangle-bounce',
       },
       {
-        animation: ngxLoadingAnimationTypes.rotatingPlane,
+        animation: lacLoadingAnimationTypes.rotatingPlane,
         expectedClass: '.spinner-sk-rotateplane',
       },
       {
-        animation: ngxLoadingAnimationTypes.wanderingCubes,
+        animation: lacLoadingAnimationTypes.wanderingCubes,
         expectedClass: '.spinner-wandering-cubes',
       },
     ].forEach(({ animation, expectedClass }) => {
-      const config = new NgxLoadingConfig();
+      const config = new LacLoadingConfig();
       config.animationType = animation;
       component.config = config;
       component.show = true;
@@ -123,52 +123,52 @@ describe('NgxLoadingComponent', () => {
   it('should show the correct animation when set at the service level and show set to true', () => {
     [
       {
-        animation: ngxLoadingAnimationTypes.threeBounce,
+        animation: lacLoadingAnimationTypes.threeBounce,
         expectedClass: '.spinner-three-bounce',
       },
       {
-        animation: ngxLoadingAnimationTypes.chasingDots,
+        animation: lacLoadingAnimationTypes.chasingDots,
         expectedClass: '.spinner-chasing-dots',
       },
       {
-        animation: ngxLoadingAnimationTypes.circle,
+        animation: lacLoadingAnimationTypes.circle,
         expectedClass: '.spinner-circle',
       },
       {
-        animation: ngxLoadingAnimationTypes.circleSwish,
+        animation: lacLoadingAnimationTypes.circleSwish,
         expectedClass: '.spinner-circle-swish',
       },
       {
-        animation: ngxLoadingAnimationTypes.cubeGrid,
+        animation: lacLoadingAnimationTypes.cubeGrid,
         expectedClass: '.sk-cube-grid',
       },
       {
-        animation: ngxLoadingAnimationTypes.doubleBounce,
+        animation: lacLoadingAnimationTypes.doubleBounce,
         expectedClass: '.spinner-double-bounce',
       },
       {
-        animation: ngxLoadingAnimationTypes.none,
+        animation: lacLoadingAnimationTypes.none,
         expectedClass: '.backdrop',
       },
       {
-        animation: ngxLoadingAnimationTypes.pulse,
+        animation: lacLoadingAnimationTypes.pulse,
         expectedClass: '.spinner-pulse',
       },
       {
-        animation: ngxLoadingAnimationTypes.rectangleBounce,
+        animation: lacLoadingAnimationTypes.rectangleBounce,
         expectedClass: '.spinner-rectangle-bounce',
       },
       {
-        animation: ngxLoadingAnimationTypes.rotatingPlane,
+        animation: lacLoadingAnimationTypes.rotatingPlane,
         expectedClass: '.spinner-sk-rotateplane',
       },
       {
-        animation: ngxLoadingAnimationTypes.wanderingCubes,
+        animation: lacLoadingAnimationTypes.wanderingCubes,
         expectedClass: '.spinner-wandering-cubes',
       },
     ].forEach(({ animation, expectedClass }) => {
-      const ngxLoadingService = TestBed.inject(NgxLoadingService);
-      const ngxLoadingConfig = new NgxLoadingConfig();
+      const ngxLoadingService = TestBed.inject(LacLoadingService);
+      const ngxLoadingConfig = new LacLoadingConfig();
       ngxLoadingConfig.animationType = animation;
       ngxLoadingConfig.backdropBackgroundColour = '#ffffff';
       ngxLoadingConfig.backdropBorderRadius = '1px';
@@ -179,7 +179,7 @@ describe('NgxLoadingComponent', () => {
 
       ngxLoadingService.loadingConfig = ngxLoadingConfig;
 
-      fixture = TestBed.createComponent(NgxLoadingComponent);
+      fixture = TestBed.createComponent(LacLoadingComponent);
       component = fixture.componentInstance;
       component.ngOnInit();
       fixture.detectChanges();

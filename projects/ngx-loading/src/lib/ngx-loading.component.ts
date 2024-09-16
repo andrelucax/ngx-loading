@@ -1,195 +1,195 @@
 import { OnInit, TemplateRef } from '@angular/core';
 import { Component, Input } from '@angular/core';
 import {
-  ngxLoadingAnimationTypes,
-  NgxLoadingConfig,
+  lacLoadingAnimationTypes,
+  LacLoadingConfig,
 } from './ngx-loading-config';
-import { INgxLoadingConfig } from './ngx-loading-config';
-import { NgxLoadingService } from './ngx-loading.service';
+import { ILacLoadingConfig } from './ngx-loading-config';
+import { LacLoadingService } from './ngx-loading.service';
 
 @Component({
-  selector: 'ngx-loading',
+  selector: 'lac-loading',
   template: `
     <div *ngIf="show">
       <div
         class="backdrop"
-        [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
+        [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
         [ngStyle]="{
-          'border-radius': config?.backdropBorderRadius,
-          'background-color': config?.backdropBackgroundColour
+          'border-radius': config.backdropBorderRadius,
+          'background-color': config.backdropBackgroundColour
         }"
       ></div>
 
-      <div [ngSwitch]="config?.animationType">
+      <div [ngSwitch]="config.animationType">
         <div
           class="spinner-circle"
           *ngSwitchCase="ngxLoadingAnimationTypes.circle"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
           [ngStyle]="{
-            'border-top-color': config?.secondaryColour,
-            'border-right-color': config?.secondaryColour,
-            'border-bottom-color': config?.secondaryColour,
-            'border-left-color': config?.primaryColour
+            'border-top-color': config.secondaryColour,
+            'border-right-color': config.secondaryColour,
+            'border-bottom-color': config.secondaryColour,
+            'border-left-color': config.primaryColour
           }"
         ></div>
 
         <div
           *ngSwitchCase="ngxLoadingAnimationTypes.cubeGrid"
           class="sk-cube-grid"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
         >
           <div
             class="sk-cube sk-cube1"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="sk-cube sk-cube2"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="sk-cube sk-cube3"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="sk-cube sk-cube4"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="sk-cube sk-cube5"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="sk-cube sk-cube6"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="sk-cube sk-cube7"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="sk-cube sk-cube8"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="sk-cube sk-cube9"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
         </div>
 
         <div
           class="spinner-sk-rotateplane"
           *ngSwitchCase="ngxLoadingAnimationTypes.rotatingPlane"
-          [ngStyle]="{ 'background-color': config?.primaryColour }"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
+          [ngStyle]="{ 'background-color': config.primaryColour }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
         ></div>
 
         <div
           class="spinner-rectangle-bounce"
           *ngSwitchCase="ngxLoadingAnimationTypes.rectangleBounce"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
         >
           <div
             class="rect1"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="rect2"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="rect3"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="rect4"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="rect5"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
         </div>
 
         <div
           class="spinner-wandering-cubes"
           *ngSwitchCase="ngxLoadingAnimationTypes.wanderingCubes"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
         >
           <div
             class="cube1"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="cube2"
-            [ngStyle]="{ 'background-color': config?.secondaryColour }"
+            [ngStyle]="{ 'background-color': config.secondaryColour }"
           ></div>
         </div>
 
         <div
           class="spinner-double-bounce"
           *ngSwitchCase="ngxLoadingAnimationTypes.doubleBounce"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
         >
           <div
             class="double-bounce1"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="double-bounce2"
-            [ngStyle]="{ 'background-color': config?.secondaryColour }"
+            [ngStyle]="{ 'background-color': config.secondaryColour }"
           ></div>
         </div>
 
         <div
           class="spinner-pulse"
           *ngSwitchCase="ngxLoadingAnimationTypes.pulse"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
-          [ngStyle]="{ 'background-color': config?.primaryColour }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
+          [ngStyle]="{ 'background-color': config.primaryColour }"
         ></div>
 
         <div
           class="spinner-chasing-dots"
           *ngSwitchCase="ngxLoadingAnimationTypes.chasingDots"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
         >
           <div
             class="dot1"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="dot2"
-            [ngStyle]="{ 'background-color': config?.secondaryColour }"
+            [ngStyle]="{ 'background-color': config.secondaryColour }"
           ></div>
         </div>
 
         <div
           class="spinner-circle-swish"
           *ngSwitchCase="ngxLoadingAnimationTypes.circleSwish"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
-          [ngStyle]="{ color: config?.primaryColour }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
+          [ngStyle]="{ color: config.primaryColour }"
         ></div>
 
         <div
           *ngSwitchCase="ngxLoadingAnimationTypes.none"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
         ></div>
 
         <div
           *ngSwitchDefault
           class="spinner-three-bounce"
-          [ngClass]="{ 'full-screen': config?.fullScreenBackdrop === true }"
+          [ngClass]="{ 'full-screen': config.fullScreenBackdrop === true }"
         >
           <div
             class="bounce1"
-            [ngStyle]="{ 'background-color': config?.primaryColour }"
+            [ngStyle]="{ 'background-color': config.primaryColour }"
           ></div>
           <div
             class="bounce2"
-            [ngStyle]="{ 'background-color': config?.secondaryColour }"
+            [ngStyle]="{ 'background-color': config.secondaryColour }"
           ></div>
           <div
             class="bounce3"
-            [ngStyle]="{ 'background-color': config?.tertiaryColour }"
+            [ngStyle]="{ 'background-color': config.tertiaryColour }"
           ></div>
         </div>
 
@@ -1029,13 +1029,13 @@ import { NgxLoadingService } from './ngx-loading.service';
     `,
   ],
 })
-export class NgxLoadingComponent implements OnInit {
+export class LacLoadingComponent implements OnInit {
   @Input() show = false;
-  @Input() config: INgxLoadingConfig = new NgxLoadingConfig();
+  @Input() config: ILacLoadingConfig = new LacLoadingConfig();
   @Input()
   template!: TemplateRef<any>;
-  private defaultConfig: INgxLoadingConfig = {
-    animationType: ngxLoadingAnimationTypes.threeBounce,
+  private defaultConfig: ILacLoadingConfig = {
+    animationType: lacLoadingAnimationTypes.threeBounce,
     backdropBackgroundColour: 'rgba(0, 0, 0, 0.3)',
     backdropBorderRadius: '0px',
     fullScreenBackdrop: false,
@@ -1043,9 +1043,9 @@ export class NgxLoadingComponent implements OnInit {
     secondaryColour: '#ffffff',
     tertiaryColour: '#ffffff',
   };
-  public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
+  public ngxLoadingAnimationTypes = lacLoadingAnimationTypes;
 
-  constructor(private LoadingService: NgxLoadingService) {}
+  constructor(private LoadingService: LacLoadingService) {}
 
   ngOnInit() {
     this.setupConfig();

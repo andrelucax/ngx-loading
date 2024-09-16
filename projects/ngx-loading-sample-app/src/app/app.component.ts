@@ -1,7 +1,7 @@
 import type { TemplateRef } from '@angular/core';
 import { Component, ViewChild } from '@angular/core';
-import { ngxLoadingAnimationTypes } from '../../../../projects/ngx-loading/src/lib/ngx-loading-config';
-import type { NgxLoadingComponent } from '../../../../projects/ngx-loading/src/lib/ngx-loading.component';
+import { lacLoadingAnimationTypes } from '../../../../projects/ngx-loading/src/lib/ngx-loading-config';
+import type { LacLoadingComponent } from '../../../../projects/ngx-loading/src/lib/ngx-loading.component';
 
 const PrimaryWhite = '#ffffff';
 const SecondaryGrey = '#ccc';
@@ -15,20 +15,20 @@ const SecondaryBlue = '#1976d2';
 })
 export class AppComponent {
   @ViewChild('ngxLoading', { static: false })
-  ngxLoadingComponent!: NgxLoadingComponent;
+  ngxLoadingComponent!: LacLoadingComponent;
   @ViewChild('customLoadingTemplate', { static: false })
   customLoadingTemplate!: TemplateRef<any>;
   @ViewChild('emptyLoadingTemplate', { static: false })
   emptyLoadingTemplate!: TemplateRef<any>;
   showingTemplate = false;
-  public ngxLoadingAnimationTypes = ngxLoadingAnimationTypes;
+  public ngxLoadingAnimationTypes = lacLoadingAnimationTypes;
   public loading = true;
   public primaryColour = PrimaryWhite;
   public secondaryColour = SecondaryGrey;
   public coloursEnabled = false;
   public loadingTemplate = this.emptyLoadingTemplate;
   public config = {
-    animationType: ngxLoadingAnimationTypes.none,
+    animationType: lacLoadingAnimationTypes.none,
     primaryColour: this.primaryColour,
     secondaryColour: this.secondaryColour,
     tertiaryColour: this.primaryColour,

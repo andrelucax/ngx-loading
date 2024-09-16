@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NgxLoadingModule } from '../../../../projects/ngx-loading/src/lib/ngx-loading.module';
+import { LacLoadingModule } from '../../../../projects/ngx-loading/src/lib/ngx-loading.module';
 import { AppComponent } from './app.component';
 
 const PrimaryWhite = '#ffffff';
@@ -14,7 +14,7 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
-      imports: [NgxLoadingModule],
+      imports: [LacLoadingModule],
     }).compileComponents();
   });
 

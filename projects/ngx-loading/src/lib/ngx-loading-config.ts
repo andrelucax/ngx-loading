@@ -1,4 +1,4 @@
-export interface INgxLoadingConfig {
+export interface ILacLoadingConfig {
   backdropBorderRadius?: string;
   backdropBackgroundColour?: string;
   fullScreenBackdrop?: boolean;
@@ -9,7 +9,7 @@ export interface INgxLoadingConfig {
   [key: string]: string | boolean | undefined;
 }
 
-export class NgxLoadingConfig implements INgxLoadingConfig {
+export class LacLoadingConfig implements ILacLoadingConfig {
   backdropBorderRadius?: string;
   backdropBackgroundColour?: string;
   fullScreenBackdrop?: boolean;
@@ -19,7 +19,7 @@ export class NgxLoadingConfig implements INgxLoadingConfig {
   tertiaryColour?: string;
   [key: string]: string | boolean | undefined;
 
-  constructor(config: INgxLoadingConfig = {}) {
+  constructor(config: ILacLoadingConfig = {}) {
     this.backdropBorderRadius = config.backdropBorderRadius;
     this.backdropBackgroundColour = config.backdropBackgroundColour;
     this.fullScreenBackdrop = config.fullScreenBackdrop;
@@ -30,7 +30,7 @@ export class NgxLoadingConfig implements INgxLoadingConfig {
   }
 }
 
-export const ngxLoadingAnimationTypes = {
+export const lacLoadingAnimationTypes = {
   chasingDots: 'chasing-dots',
   circle: 'sk-circle',
   circleSwish: 'circleSwish',
